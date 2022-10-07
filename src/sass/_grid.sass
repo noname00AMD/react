@@ -1,0 +1,168 @@
+$sm: 576px // 577 - 768
+$md: 768px // 769 - 992
+$lg: 992px // 993 - 1200
+$xl: 1200px // 1201 - 1400
+$xxl: 1400px // max: 1400 
+$columns-12: 12 !default
+$rows-10: 6 !default
+$gap: 10px
+.cont-fluid , .cont , .sm-cont
+    width: 100%
+    padding-right: calc(var(--gap) / 2)
+    padding-left: calc(var(--gap) / 2)
+    margin-right: auto
+    margin-left: auto
+.cont-fluid
+    max-width: 100%
+.cont
+    max-width: var(--container-w)
+.sm-cont
+    max-width: var(--sm-container-w)
+
+.row
+    display: grid
+    grid-column-gap: $gap
+    grid-template-columns: repeat($columns-12,1fr)
+    >[class*=col-]
+        grid-column: var(--start , auto) /span var(--col, auto)
+        --col: #{$columns-12}
+        --start: auto
+    @for $i from 1 through $columns-12
+        >.col-#{$i}
+            --col: #{$i}
+        >.start-#{$i}
+            --start: #{$i}
+        >.col-xs-#{$i}
+            --col: #{$i}
+        >.start-xs-#{$i}
+            --start: #{$i}
+:root
+    --container-w: 100%
+    --sm-container-w: 100%
+    --gap: #{$gap}
+    .d-none,.d-xs-none ,.d-sm-none , .d-md-none , .d-lg-none , .d-xl-none , .d-xxl-none
+        display: none
+    .d-inline,.d-xs-inline,.d-sm-inline , .d-md-inline , .d-lg-inline , .d-xl-inline , .d-xxl-inline
+        display: inline
+    .d-block,.d-xs-block ,.d-sm-block , .d-md-block , .d-lg-block , .d-xl-block , .d-xxl-block
+        display: block
+    .d-inline-block.d-xs-inline-block,.d-sm-inline-block , .d-md-inline-block , .d-lg-inline-block , .d-xl-inline-block , .d-xxl-inline-block
+        display: inline-block
+    .w-100
+        width: 100%
+
+//---------------------For SM screen------------------------
+@media (min-width: calc(#{$sm} )) //576--768
+    :root
+        --container-w: 100%
+        --sm-container-w: 100%
+    .row
+        @for $i from 1 through $columns-12
+            >[class*=col-sm-#{$i}]
+                --col: #{$i}
+            >[class*=start-sm-#{$i}]
+                --start: #{$i}
+         
+    .d-sm-none ,.d-md-none , .d-lg-none , .d-xl-none , .d-xxl-none
+        display: none
+    .d-sm-inline,.d-md-inline , .d-lg-inline , .d-xl-inline , .d-xxl-inline
+        display: inline
+    .d-sm-block ,.d-md-block , .d-lg-block , .d-xl-block , .d-xxl-block
+        display: block
+    .d-sm-inline-block,.d-md-inline-block , .d-lg-inline-block , .d-xl-inline-block , .d-xxl-inline-block
+        display: inline-block
+    [class*=d-xs-]
+        display: initial !important
+
+//------------------------For MD screen ---------------------------
+@media (min-width: calc(#{$md} ))//768-992
+
+    :root
+        --container-w: 100%
+        --sm-container-w: 720px
+
+    .row
+        @for $i from 1 through $columns-12
+            >[class*=col-md-#{$i}]
+                --col: #{$i}
+            >[class*=start-md-#{$i}]
+                --start: #{$i}
+           
+    .d-md-none , .d-lg-none , .d-xl-none , .d-xxl-none
+        display: none
+    .d-md-inline , .d-lg-inline , .d-xl-inline , .d-xxl-inline
+        display: inline
+    .d-md-block , .d-lg-block , .d-xl-block , .d-xxl-block
+        display: block
+    .d-md-inline-block , .d-lg-inline-block , .d-xl-inline-block , .d-xxl-inline-block
+        display: inline-block
+    [class*=d-xs-] , [class*=d-sm-]
+        display: initial !important
+
+//------------------------For LG screen ---------------------------
+@media (min-width: calc( #{$lg}  ))//992-1200
+    :root
+        --container-w: 960px
+        --sm-container-w: 960px
+    .row
+        @for $i from 1 through $columns-12
+            >[class*=col-lg-#{$i}]
+                --col: #{$i}
+            >[class*=start-lg-#{$i}]
+                --start: #{$i}
+          
+    .d-lg-none , .d-xl-none , .d-xxl-none
+        display: none
+    .d-lg-inline , .d-xl-inline , .d-xxl-inline
+        display: inline
+    .d-lg-block , .d-xl-block , .d-xxl-block
+        display: block
+    .d-lg-inline-block , .d-xl-inline-block , .d-xxl-inline-block
+        display: inline-block
+    [class*=d-xs-] , [class*=d-sm-] ,[class*=d-md-]
+        display: initial !important
+//------------------------For XL screen ---------------------------
+@media (min-width: calc(#{$xl} ))
+    :root
+        --container-w: 1140px
+        --sm-container-w: 1140px
+    .row
+        @for $i from 1 through $columns-12
+            >[class*=col-xl-#{$i}]
+                --col: #{$i}
+            >[class*=start-xl-#{$i}]
+                --start: #{$i}
+           
+    .d-xl-none , .d-xxl-none
+        display: none
+    .d-xl-inline , .d-xxl-inline
+        display: inline
+    .d-xl-block , .d-xxl-block
+        display: block
+    .d-xl-inline-block , .d-xxl-inline-block
+        display: inline-block
+    [class*=d-xs-] , [class*=d-sm-] ,[class*=d-md-] ,[class*=d-xl-]
+        display: initial !important
+
+//------------------------For XXL screen ---------------------------
+@media (min-width: calc(#{$xxl}  ))//1400
+    :root
+        --container-w: 1320px
+        --sm-container-w: 1320px
+
+    .row
+        @for $i from 1 through $columns-12
+            >[class*=col-xxl-#{$i}]
+                --col: #{$i}
+            >[class*=start-xxl-#{$i}]
+                --start: #{$i}
+    .d-xxl-none
+        display: none
+    .d-xxl-inline
+        display: inline
+    .d-xxl-block
+        display: block
+    .d-xxl-inline-block
+        display: inline-block
+    [class*=d-xs-] , [class*=d-sm-] ,[class*=d-md-] ,[class*=d-xl-],[class*=d-xxl-]
+        display: initial !important
