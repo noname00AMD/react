@@ -15,20 +15,17 @@ class App extends React.Component {
     render() {
         return (
             <>
-
-                <Header />
-                <Router>
-                    <Switch>
-                        <Route index element={<Home />} ></Route>
-                        <Route path="/todo" element={<Todo />}>                        </Route>
-                        <Route path="/about" element={<About />}>                        </Route>
-                    </Switch>
-                </Router>
+            <Header />
+            <Router>
+            <Switch>
+            <Route index element={<Home />} ></Route>
+            <Route path="/todo" element={<Todo />}>                        </Route>
+            <Route path="/about" element={<About/>}>                        </Route>
+            </Switch>
+            </Router>
             </>
 
-        );
+            );
     }
 }
-
-
 export default App;

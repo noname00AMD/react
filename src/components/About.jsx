@@ -2,13 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class About extends React.Component {
-    render() {
-        return (<>
-           <header >
-              about
-            </header>
-        </>)
-    };
+	 handleClick() {
+    this.setState(prevState => ({
+      				isToggleOn: !prevState.isToggleOn
+    }));
+  }
+      render() {
+    return (
+      <button onClick={this.handleClick}>
+        						{this.state.isToggleOn ? 'ON' : 'OFF'}
+      		</button>
+    );
+  }
 }
 
 

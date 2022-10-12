@@ -22,12 +22,10 @@ class Header extends React.Component {
                             <NavLink to={"/about"} className={isActive =>
                                 "nav-link" + (isActive ? " selected" : "")
                             }>about</NavLink>
-                        </Router>
+                       										 </Router>
                     </header>
                     <div style={{ backgroundColor: "red" }} className="col-sm-4 d-xs-none ">
-                        <script>
-
-                        </script>
+                       
                     </div>
                 </div>
             </div>
