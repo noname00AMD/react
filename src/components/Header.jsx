@@ -12,7 +12,6 @@ class Header extends React.Component {
             <div className="sm-cont">
                 <div className="row">
                     <header className={"header col-sm-8 col-xs-11"}>
-                        <Router>
                             <NavLink to={"/"} exact={true} className={isActive =>
                                 "nav-link" + (isActive ? " selected" : "")
                             }>home</NavLink>
@@ -22,7 +21,6 @@ class Header extends React.Component {
                             <NavLink to={"/about"} className={isActive =>
                                 "nav-link" + (isActive ? " selected" : "")
                             }>about</NavLink>
-                       										 </Router>
                     </header>
                     <div style={{ backgroundColor: "red" }} className="col-sm-4 d-xs-none ">
                        
