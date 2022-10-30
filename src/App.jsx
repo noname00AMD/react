@@ -7,12 +7,10 @@ import {
     Link,
     NavLink,
 } from "react-router-dom";
-
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 import Todo from "./components/Todo.jsx";
 import Header from "./components/Header.jsx";
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -21,8 +19,7 @@ class App extends React.Component {
     }
 
     handleChange(e) {
-        var a = Math.random()*100
-        this.setState({ temperature: ~~a });
+        this.setState({ temperature: e.target.value });
         // this.setState({ temperature: e.target.value });
     }
 
