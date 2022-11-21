@@ -4,13 +4,53 @@
 @import 'components/links'
 body
     font-family: system-ui
- 
-.selected
-    background-color: green
+
 .header
-    position: sticky
+    text-align: right
+    position: fixed
+    width: 100%
     z-index: 1
     top: 0
-    background-color: #ccc
-    a
+    button
         padding: 10px 20px
+        margin: 5px 15px 5px
+        color: black
+        background-color: white
+        border-radius: 5px
+        cursor: pointer
+        &:hover
+            color: white
+            background-color: black
+.hero
+    height: 100vh
+    background-size: 100% 100%
+    .content
+        .logo
+            margin-top: 100px
+            width: 120px
+        h1
+            color: white
+            font-size: 38px
+        input
+            height: 32px
+            font-size: 22px
+            width: 100%
+            display: inline-block
+            background: #333
+            padding: 8px
+            color: #ddd
+            border-radius: 3px
+            &::placeholder
+                color: #ddd
+                opacity: 0.4
+
+        button
+            border-radius: 3px
+            height: 32px
+            display: inline-block
+            color: #fff
+            font-size: 18px
+            width: 100%
+            background-color: #0063e5
+            &:hover
+                background-color: #016cf9

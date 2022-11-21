@@ -1,5 +1,5 @@
 import "./sass/app.sass";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,37 +7,23 @@ import {
     Link,
     NavLink,
 } from "react-router-dom";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import Todo from "./components/Todo.jsx";
-import Header from "./components/Header.jsx";
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = { temperature: "" };
-    }
+import Header from "./components/Header.jsx"
+import Hero from './components/Hero.jsx';
+function App() {
 
-    handleChange(e) {
-        this.setState({ temperature: e.target.value });
-        // this.setState({ temperature: e.target.value });
-    }
+    var [name, setName] = useState("")
+    useEffect(() => {
 
-    render() {
-        const temperature = this.state.temperature;
-        return (
-            <fieldset>
-                <legend>Enter temperature in Celsius:</legend>
-                <input value={temperature} onChange={this.handleChange} />
-                <BoilingVerdict celsius={parseFloat(temperature)} />
-            </fieldset>
-        );
-    }
+    }, [name]);
+    return (
+        <>
+            <Header />
+            <main>
+                <Hero></Hero>
+            </main>
+
+        </>
+    )
 }
-function BoilingVerdict(props) {
-    if (props.celsius >= 100) {
-        return <p>The water would boil.</p>;
-    }
-    return <p>The water would not boil.</p>;
-}
+
 export default App;
